@@ -1,0 +1,18 @@
+Class khá lớn
+* Dấu hiệu nhận biết
+- Một class chứa nhiều field/phương thức/nhiều dòng code.
+* Lý do của những vấn đề này
+- Class lúc đầu mới viết thì nó nhỏ lắm. Nhưng từ từ thì nó càng phình ra khi chương trình nó phát triển.
+- Cũng giống như trường hợp phương thức dài, lập trình viên thường thấy việc viết một tính năng mới trong một class có sẵn thì dễ hơn tạo một lớp cho tính năng đó.
+* Cách khắc phục
+- Khi một class mà có quá nhiều chức năng, hãy nghĩ đến chuyện tách nó ra nhé:
+	+ Tách class giúp cho mỗi phần nhỏ của class lớn có thể được tách thành một phần riêng biệt.
+
+	+ Tách thành các lớp con giúp cho các lớp lớn có thể impliment theo nhiều cách khác nhau hoặc sử dụng trong một số trường hợp đặc biệt.
+
+	+ Tách Interface vì nó rất hữu ích khi nếu chỉ cần xem danh sách các phương thức chức năng mà client có thể sử dụng.
+
+	+ Nếu một class lớn có liên quan đến giao diện đồ họa, bạn có thể di chuyển data của nó và tách thành một object riêng. Bởi vì, nó có thể dùng để chứa một vài data giống nhau nhưng ở chỗ khác và như vậy thì sẽ giúp data không thay đổi. 
+* Cái mình nhận lại được:
+- Refactor những cái class này giúp cho lập trình viên dễ nhớ các thuộc tính của một class.
+- Trong nhiều trường hợp, tách các lớp lớn thành các phần để tránh sự lặp lại code và chức năng

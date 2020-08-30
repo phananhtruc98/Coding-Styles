@@ -1,0 +1,18 @@
+Primitive Obsession
+* Dấu hiệu nhận biết
+- Sử dụng những kiểu dữ liệu thông dụng những object nhỏ cho những task đơn giản (ví dụ tiền tệ, phạm vi, chuỗi ký tự đặc biệt cho số điện thoại,v..v..)
+- Sử dụng hằng số cho các thông tin khi code ( ví dụ như hằng số USER_ADMIN_ROLE = 1 cho những người dùng có quyền admin)
+- Sử dụng hằng số chuỗi làm field name trong mảng dữ liệu
+* Lý do của những vấn đề này
+- Cũng giống như những code smell khác, primitive obsession này được hình thành khi người lập trình viên nói "Chỉ có cần một field thôi!". Tạo thêm một primitive field thì dễ hơn tạo một class rồi đúng không? Và xong, chỉ cần vậy thôi. Đến một field khác cần thiết và người lập trình viên cũng thêm như cách ở trên. Lạ chưa kìa, lớp càng ngày càng to lớn và cồng kềnh.
+- Primitive thường được sử dụng để "mô phỏng" loại. Thay vì tách một kiểu dữ liệu, bạn có một bộ số và chuỗi để tạo thành list của những giá trị cho phép cho một số entity. Tên dễ hiểu được đặt cho những con số và chuỗi xác định như hằng số, đó là lý do mà việc làm đó phổ biến.
+- Một ví dụ khác của poor primitive là mô phỏng trường. Class gồm một mảng lớn chứa nhiều dữ liệu và hằng số chuỗi (được xác định trong class) được sử dụng như chỉ số để lấy data. Có nghĩa là thay vì một lớp chỉ có những thuộc tính của lớp đó thì ở đây nó dùng các trường để lưu data được lấy từ nơi khác.
+* Cách khắc phục
+- Nếu bạn có một lượng lớn trường primitive, bạn có thể nhóm mấy trường liên quan đến nhau tạo thành một class riêng. Tốt hơn nữa, bạn đem luôn cả các phương thức liên quan vào class đó luôn. Bạn có thể tham khảo ở đây, Replace Data Value With Object (https://refactoring.guru/replace-data-value-with-object). 
+- Nếu giá trị của trường primitive được sử dụng trong phương thức có tham số, hãy xem thử Introduce Parameter Object(https://refactoring.guru/introduce-parameter-object) hoặc Preserve Whole Object(https://refactoring.guru/preserve-whole-object).
+- Khi mà dữ liệu phức tạp được dùng trong biến, sử dụng Replace Type Code with Class (https://refactoring.guru/replace-type-code-with-class), Replace Type Code with Subclasses(https://refactoring.guru/replace-type-code-with-subclasses) hoặc Replace Type Code with State/Strategy(https://refactoring.guru/replace-type-code-with-state-strategy).
+- Nếu trong các biến có kiểu dữ liệu mảng, sử dụng Replace Array With Object (https://refactoring.guru/replace-array-with-object)
+* Cái mình nhận lại được:
+- Code trở nên linh hoạt hơn nhờ vào lợi ích của object thay vì primitives
+- Code dễ hiểu và dễ tổ chức hơn. Vận hành dữ liệu riêng biệt khi ở cùng một nơi, thay vì ở rải rác. Không cần phải đoán về lý do của những hằng số và tại sao đó là một mảng.
+- Dễ tìm những code bị trùng lặp.

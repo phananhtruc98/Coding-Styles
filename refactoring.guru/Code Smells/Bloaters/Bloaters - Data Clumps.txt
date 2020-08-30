@@ -1,0 +1,17 @@
+Dữ liệu nhồi nhét
+* Dấu hiệu nhận biết
+- Đôi khi những phần khác nhau trong code chứa những nhóm biến giống hệt nhau (ví dụ như là những tham số cho việc kết nối cơ sở dữ liệu). Những cục data này nên được để trong một cái class của riêng nó.
+
+* Lý do của những vấn đề này
+- Thường những nhóm dữ liệu này là do cấu trúc chương trình dở hoặc là do "copypasta programming".
+- Nếu bạn muốn biết một số dữ liệu có phải là data clump không thì chỉ cần xóa một giá trị trong đống data đó và xem những giá trị khác còn ý nghĩa hay không. Nếu những giá trị khác vẫn còn giá trị thì đó là dấu hiệu tốt cho thấy nhóm biến này nên được kết hợp thành một object.
+* Cách khắc phục:
+- Nếu dữ liệu lặp lại bao gồm các trường của một lớp, hãy sử dụng Extract Class(https://refactoring.guru/extract-class) để di chuyển các trường vào class của nó.
+- Nếu một data clumps được truyền trong tham số của phương thức, hãy sử dụng Introduce Parameter Object (https://refactoring.guru/introduce-parameter-object) để đặt chúng thành một lớp.
+- Nếu một vài dữ liệu được truyền đến một phương thức khác, hãy nghĩ về việc truyền hết toàn bộ data của object vô phương thức thay vì chỉ những trường độc lập. Preserve Whole Object(https://refactoring.guru/preserve-whole-object) sẽ có ích trong việc đó.
+- Nhìn vào code mà sử dụng các trường của data clumps đó. Ý hay là di chuyển code đó vô trong một data class.
+* Cái mình nhận lại được:
+- Cải thiện việc dễ hiểu và tổ chức của code. Các thao tác trên dữ liệu cụ thể giờ được tập hợp ở một nơi duyên nhất thay vì một cách ngẫu nhiên trong code.
+- Giảm chiều dài code. 
+* Khi nào thì nên bỏ qua việc này
+- Truyền nguyên một object trong một tham số của phương thức, thay vì truyền từng value (kiểu primitvie), có thể tạo một phụ thuộc không mong muốn giữa hai lớp.

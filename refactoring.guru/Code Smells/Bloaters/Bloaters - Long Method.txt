@@ -1,0 +1,18 @@
+Phương thức dài
+* Dấu hiệu nhận biết
+- Một phương thức có quá nhiều dòng. Thông thường, bất kỳ phương thức nào dài hơn 10 dòng thì nên bắt đầu đặt các câu hỏi.
+* Lý do của những vấn đề này
+- Giống như khách sạn California, đã đi vô rồi thì sẽ không muốn đi ra, giống như khi bỏ gì đó vô một phương thức thì dường như mình không có lấy nó ra lại. Từ đó, việc viết code dễ hơn việc đọc code, cái "mùi" này sẽ không bị chú ý cho đến khi phương thức trở nên xấu đi và to như quái vật.
+- Về mặt tinh thần, khó thêm phương thức mới hơn là thêm vào phương thức đã có sắn: "Nhưng nó chỉ có hai dòng, không nhất thiết phải tạo nguyên một phương thức mới cho nó.." Có nghĩa là một  dòng khác được thêm vào và sau đó thêm một cái khác nữa, từ đó sinh ra một đống spaghetti code.
+* Cách khắc phục
+- Theo kinh nghiệm thực tế, nếu bạn cảm thấy cần phải comment vào bất cứ gì trong phương thức, thì bạn nên lấy phần code đó ra và đặt vào một phương thức mới khác. Thậm chí một dòng duy nhất cũng có thể và nên được tách thành một phương thức riêng nếu nó cần phải giải thích. Và nếu một phương thức có một tên miêu tả, bất kỳ ai nhìn vô cũng sẽ biết code đó để làm gì.
+	+ Giảm chiều dài của phương thức
+	+ Nếu biến local và tham số cản trở việc truy xuất một phương thức
+	+ Nếu không có phương thức nào trước đó có ích, hãy di chuyển toàn bộ phương thức vô một đối tượng. 
+	+ Toán tử điều kiện và toán tử lặp là một minh chứng tốt về code có thể được di chuyển vào một phương thức riêng biệt. 
+* Cái mình nhận lại được:
+- Trong tất cả các loại code hướng đối tượng, class với các phương thức ngắn sẽ tồn tại lâu nhất. Phương thức hoặc function càng dài, thì nó sẽ càng khó để hiểu và bảo trì.
+- Ngoài ra, phương thức dài thường là nơi hoàn hảo để chưas các code lặp lại không mong muốn.
+* Đánh giá
+- Càng nhiều dòng code trong phương thức có làm giảm hiệu suất như mọi người nói? Phần lớn những trường hợp bị ảnh hưởng thì không đáng kể nên là đừng bận tâm về điều đó.
+- Thêm nữa, bây giờ bạn đang code clear và dễ hiểu, bạn có khả năng để kiếm được phương thức hiệu quả cho việc tái cấu trúc và đạt được hiệu quả thực tế nếu như yêu cầu phát sinh.
