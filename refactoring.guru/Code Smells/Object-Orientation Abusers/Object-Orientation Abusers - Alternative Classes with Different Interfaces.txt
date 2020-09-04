@@ -1,10 +1,20 @@
-
+Những lớp thay thế với những interface khác nhau
 * Dấu hiệu nhận biết
+- Hai lớp trình bày những chức năng giống hệt nhau nhưng có tên phương thức khác nhau.
 
 * Lý do của những vấn đề này
+- Người lập trình viên tạo 1 trong những lớp đó hoàn toàn không biết là đã tồn tại class có chức năng tương tự như vậy rồi.
 
 * Cách khắc phục:
+- Thử đặt interface của các lớp chung một mẫu số chung:
+	+ Đổi tên phương thức(https://refactoring.guru/rename-method) để làm chúng giống nhau trong mọi lớp thay thế.
+	+ Thêm phương thức(https://refactoring.guru/move-method), thêm tham số(https://refactoring.guru/add-parameter) và Phương thức tham số hóa(https://refactoring.guru/parameterize-method) để làm dấu và thực thi phương thức giống nhau
+	+ Nếu chỉ 1 phần trong chức năng của lớp bị lặp lại, hãy sử dụng Extract Superclass(https://refactoring.guru/extract-superclass). Trong trường hợp này, lớp tồn tại sẽ trở thành lớp con.
+	+ Sau khi xác định được cách xử lý phương thức nào sử dụng và thực hiện nó, bạn có thể sẽ phải xóa một vài lớp. 
 
 * Cái mình nhận lại được:
+- Sẽ không có code không cần thiết lặp lại, kết quả làm cho code cồng kềnh.
+- Code trở nên dễ đọc và dễ hiểu (bạn không cần phải đoán lý do của sự tồn lại của lớp thứ hai khi nó thực hiện chức năng giống như lớp thứ nhất) 
 
 * Khi nào thì nên bỏ qua việc này
+- Đôi khi gộp các lớp lại là điều không thể hoặc khá khó dẫn đến vô nghĩa. Một ví dụ là khi các lớp thay thế sử dụng những thư viện khác nhau, lúc đó mỗi lớp sẽ thực hiện đúng phiên bản của nó.

@@ -1,0 +1,1 @@
+- Những `mùi` này chưa đúng hoặc chưa hoàn thiện đúng với tiêu chí của ứng dụng hướng đối tượng.
