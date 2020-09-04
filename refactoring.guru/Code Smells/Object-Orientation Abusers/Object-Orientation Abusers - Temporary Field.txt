@@ -1,0 +1,14 @@
+Trường tạm
+* Dấu hiệu nhận biết
+- Các trường tạm thời chỉ nhận giá trị của chúng (để dùng cho object) trong một số trường hợp nhất định. Ngoài những trường hợp đó thì các trường đều rỗng.
+
+* Lý do của những vấn đề này
+- Thông thường, các trường được tạo ra với mục đích sử dụng trong một thuật toán với lượng lớn yêu cầu đầu vào. Vì vậy, thay vì tạo một số lượng lớn tham số trong phương thức, lập trình viên thường quyết định tạo các trường để giữ các dữ liệu này trong class. Các trường này chỉ sử dụng trong thuật toán và không sử dụng trong thời gian còn lại.
+- Kiểu code này rất khó hiểu. Bạn muốn thấy dữ liệu trong các trường của object nhưng vì lý do nào đó chúng hầu như luôn rỗng.
+
+* Cách khắc phục:
+- Các trường và code vận hành trong nó có thể được đặt trong class tách biệt giống như Extract Class(https://refactoring.guru/extract-class). Nói cách khác, bạn tạo một đối tượng phương thức, để đạt được kết quả giống nhau như bạn làm Replace Method with Method Object(https://refactoring.guru/replace-method-with-method-object). 
+- Introduce Null Object (https://refactoring.guru/introduce-null-object) và vận hành nó trong code điều kiện mà dùng để kiểm trả giá trị của trường tồn tại hay không.
+
+* Cái mình nhận lại được:
+- Code rõ ràng và tổ chức tốt hơn.

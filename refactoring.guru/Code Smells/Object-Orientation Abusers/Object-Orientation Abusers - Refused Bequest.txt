@@ -1,0 +1,10 @@
+Từ chối đồ để lại
+* Dấu hiệu nhận biết
+- Nếu một class con chỉ sử dụng một vài phương thức và thuộc tính kế thừa từ cha của nó, thì hệ thống cấp bậc nó không đúng thứ tự. Những phương thức cần thiết có thể dễ dàng trở nên không sử dụng hoặc là phải được định nghĩa lại và đưa ra các ngoại lệ.
+* Lý do của những vấn đề này
+- Một người nào đó tạo lớp con để kế thừa lớp cha với mục đích là sử dụng lại code của lớp cha. Nhưng lớp cha và lớp con hoàn toàn khác nhau.
+* Cách khắc phục:
+- Nếu kế thừa đúng, thì loại bỏ những trường và phương thức trong lớp con. Lấy tất cả trường và phương thức cần thiết cho lớp con từ lớp cha, đặt chúng trong lớp mới, và cả hai lớp (lớp cha và con ban đầu) đều kết thừa lớp vừa mới tạo. (Extract Superclass(https://refactoring.guru/extract-superclass))
+* Cái mình nhận lại được:
+- Cải thiện tổ chức code và code rõ ràng hơn. Bạn sau này sẽ không cần phải suy nghĩ tạo sao lớp `Dog` kết thừa lớp `Chair` (mặc dùng cả hai đều có 4 chân)
+* Khi nào thì nên bỏ qua việc này

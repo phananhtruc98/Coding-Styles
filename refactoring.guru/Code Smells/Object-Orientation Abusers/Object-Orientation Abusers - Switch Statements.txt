@@ -1,0 +1,21 @@
+Switch Statements
+* Dấu hiệu nhận biết
+- Khi bạn có sự kết hợp phức tạp giữa các toán tử "switch" hoặc một đống mệnh đề "if".
+
+* Lý do của những vấn đề này
+- Tương đối hiếm sử dụng toán tử `switch` và `case` là một dấu hiệu của code hướng đối tượng. Thường một `switch` đơn lẻ hay rải rác ở nhiều nơi trong chương trình. Khi có thêm điều kiện mới, bạn phải kiếm hết tất cả các code `switch` và sửa lại chúng.
+- Theo kinh nghiệm, khi bạn sử dụng `switch` bạn hãy nghĩ đến tính đa hình. 
+
+* Cách khắc phục:
+- Tách `switch` và đặt nó vô đúng class, bạn sẽ phải cần đọc Extract Method(https://refactoring.guru/extract-method) và sau đó là Move Method(https://refactoring.guru/move-method).
+- Nếu một `switch` được dựa trên một loại code, nhưng là mode runtime của chương trình là switch, tham khảo Replace Type Code with Subclasses(https://refactoring.guru/replace-type-code-with-subclasses) hoặc Replace Type Code with State/Strategy(https://refactoring.guru/replace-type-code-with-state-strategy)
+- Sau khi xác định cấu trúc thừa kế, sử dụng  Replace Conditional with Polymorphism.(https://refactoring.guru/replace-conditional-with-polymorphism)
+- Nếu không có quá nhiều điều kiện trong toán tử và tất cả đều gọi cùng một phương thức với tham số khác nhau, tính đa hình sẽ bị thừa. Trongn trường hợp này, bạn có thể tách phương thức thành nhiều phương thức con với Replace Parameter with Explicit Methods(https://refactoring.guru/replace-parameter-with-explicit-methods) và thay đổi `switch` phù hợp.
+- Nếu một trong các điều kiện tùy chọn là null, sử dụng Introduce Null Object.(https://refactoring.guru/introduce-null-object)
+
+* Cái mình nhận lại được:
+- Cải thiện tổ chức của code.
+
+* Khi nào thì nên bỏ qua việc này
+- Khi toán tử 	`switch` diễn tả một hành động đơn giản và không có lý do nào để làm code thay đổi
+- Thương thì toán tử `switch` được sử dụng cho design pattern (Factory Method(https://refactoring.guru/design-patterns/factory-method) hoặc Abstract Factory(https://refactoring.guru/design-patterns/abstract-factory)) để chọn một class được tạo.
