@@ -1,0 +1,13 @@
+Sự thay đổi khác nhau
+* Dấu hiệu nhận biết
+- Khi mà bạn thấy bạn phải thay đổi nhiều phương thức không liên quan khi bạn thay đổi gì đó trong một lớp. Ví dụ, khi bạn thêm 1 loại sản phẩm, bạn phải thay đổi các phương thức liên quan như tìm kiếm, hiển thị, và sắp xếp sản phẩm.
+* Lý do của những vấn đề này
+- Thường những thay đổi khác nhau này là do poor program structure hoặc là do `copy pasta programming`
+* Cách khắc phục
+- Tách xử lý của lớp ra thành lớp riêng như Extract Class (https://refactoring.guru/extract-class)
+- Nếu những lớp khác nhau mà có cùng behavior, bạn nên kết hợp các lớp lại và dùng thừa kế. (Extract Superclass(https://refactoring.guru/extract-superclass) và ExtractSubclass(https://refactoring.guru/extract-subclass))
+* Cái mình nhận lại được
+- Cải thiện cấu trúc code
+- Giảm các code bị trùng
+- Đơn giản hóa hỗ trợ
+* Khi nào thì nên bỏ qua việc này
