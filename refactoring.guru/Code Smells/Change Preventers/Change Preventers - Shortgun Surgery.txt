@@ -1,5 +1,13 @@
+Nhiều sự thay đổi ở nhiều lớp (Shotgun Surgery)
 * Dấu hiệu nhận biết
+- Khi có bất kỳ yêu cầu chỉnh sửa mà bạn phải làm nhiều thay đổi nhỏ đến nhiều lớp khác nhau. (Giống như shotgun một khi bắn sẽ bắn nhiều chỗ, thì này là một yêu cầu thay đổi là phải thay đổi nhiều nơi.)
 * Lý do của những vấn đề này
+- Một tính năng được chia nhỏ ở trong nhiều lớp. Đây có thể là do việc lạm dụng quá mức của Divergent Change (https://refactoring.guru/smells/divergent-change). Nghĩa là khi thay đổi trong một lớp đủ, xong người lập trình viên thay đổi ở lớp còn lại liên quan đến tính năng đó.
 * Cách khắc phục
+- Sử dụng Move Method và Move Field để di chuyển phương thức tồn tại của lớp đến một lớp độc lập. Nếu không có lớp nào để thực hiện việc đó thì hãy tạo một lớp mới.
+- Nếu di chuyển code đến một lớp tương tự và làm cho gốc hầu như rỗng, hãy thử bỏ hết những lớp dư thừa đó bằng việc sử dụng Inline Class(https://refactoring.guru/inline-class)
 * Cái mình nhận lại được
+- Cấu trúc code tốt hơn
+- Code ít bị trùng
+- Dễ bảo trì
 * Khi nào thì nên bỏ qua việc này

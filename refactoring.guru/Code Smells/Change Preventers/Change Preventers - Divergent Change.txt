@@ -1,4 +1,4 @@
-Sự thay đổi khác nhau
+Sự thay đổi nhiều nơi trong một lớp
 * Dấu hiệu nhận biết
 - Khi mà bạn thấy bạn phải thay đổi nhiều phương thức không liên quan khi bạn thay đổi gì đó trong một lớp. Ví dụ, khi bạn thêm 1 loại sản phẩm, bạn phải thay đổi các phương thức liên quan như tìm kiếm, hiển thị, và sắp xếp sản phẩm.
 * Lý do của những vấn đề này

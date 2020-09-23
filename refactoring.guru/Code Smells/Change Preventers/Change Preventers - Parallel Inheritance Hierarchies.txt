@@ -1,5 +1,11 @@
+Hệ thống phân cấp kế thừa song song
 * Dấu hiệu nhận biết
+- Bất kỳ khi nào bạn tạo một lớp con cho một lớp, bạn thấy mình cần phải tạo lớp con cho một lớp khác.
 * Lý do của những vấn đề này
+- Hệ thống phân cấp kế thừa sẽ tốt hơn khi nó nhỏ. Nhưng khi một lớp mới được thêm vào, làm việc thay đổi trở nên khó khăn hơn.
 * Cách khắc phục
+- Bạn có thể khắc phục trùng code khi sử dụng hệ thống phân cấp kế thừa song song bằng hai bước. Đầu tiên, tạo thực thể của một hệ thống phân cấp này tham chiếu đến thực thể của hệ thống phân cấp khác. Sau đó bỏ 
 * Cái mình nhận lại được
+- Giảm code trùng
+- Có thể cải thiện cấu trúc code
 * Khi nào thì nên bỏ qua việc này
