@@ -1,0 +1,14 @@
+Lớp dữ liệu
+* Dấu hiệu nhận biết
+- Một lớp dữ liệu thường nói đến những lớp mà nó chỉ bao gồm trường và những phương thức thô sơ sử dụng để truy cập chúng (getters và setters). Những cái này đơn giản là chỉ chứa dữ liệu được sử dụng trong những lớp khác. Những lớp này không chứa bất kỳ chức năng nào và không thể tự chạy một cách đọc lập những dữ liệu của nó.
+* Lý do của những vấn đề này
+- Điều này là bình thường khi mà mới tạo lớp chỉ chứa một vài public trường (và thậm chí có thể có đầy đủ getters/setters). Nhưng sức mạnh thật sự của đối tượng là nó có thể bao gồm những hành vi và vận hành dữ liệu của nó.
+* Cách khắc phục
+-  Nếu một lớp bao gồm những trường public, sử dụng Encapsulate Field(https://refactoring.guru/encapsulate-field) để giấu chúng từ cách tiếp cận trực tiếp và yêu cầu chỉ tiếp cận thông qua getters và setters.
+- Sử dụng Encapsulate Collection(https://refactoring.guru/encapsulate-collection) cho dữ liệu trong mảng.
+- Xem lại code trên client đang sử dụng lớp. Trong đó, bạn có thể tìm ra chức năng mà nó nên ở trong lớp dữ liệu của chính nó. Nếu có thì sử dụng Move Method(https://refactoring.guru/move-method) và Extract Method(https://refactoring.guru/extract-method) để di chuyển chức năng đó vô lớp dữ liệu.
+- Sau khi lớp đầy đủ các phương thức chỉnh chu, bạn có thể muốn loại bỏ những phương thức cũ để lấy dữ liệu mà bạn cho nó quyền truy cập quá rộng để lấy được dữ liệu. Trong trường hợp này, nên loại bỏ phương thức cài đặt Remove Setting Method(https://refactoring.guru/remove-setting-method) và giấu phương thức đó Hide Method(https://refactoring.guru/hide-method).
+* Cái mình nhận lại được
+- Cải thiện việc hiểu và cấu trúc lại code. Các thao tác trên dữ liệu cụ thể được tập hợp ở một nơi duy nhất thay vì ở một nơi ngẫu nhiên trong toàn bộ code.
+- Giúp bạn phát hiện code trùng trong code ở client
+* Khi nào thì nên bỏ qua việc này

@@ -1,0 +1,15 @@
+Code chết
+* Dấu hiệu nhận biết
+- Một biến, tham số, trường, phương thức hoặc lớp không được sử dụng (thường là bởi vì nó cũ)
+* Lý do của những vấn đề này
+- Khi yêu cầu phần mềm thay đổi hoặc chỉnh sửa phần mềm lại cho đúng thì sẽ không có ai có thời gian để dọn dẹp lại code cũ
+- Giống như là code có thể được tìm thấy trong câu điều kiện phức tạp, khi một trong những nhánh trở nên khó tiếp cận (do lỗi hoặc do trường hợp khác)
+* Cách khắc phục
+- Cách nhanh nhất để tìm code chết là sử dụng một IDE tốt
+	+ Xóa những code không sử dụng và file ko cần thiết.
+	+ Trong trường hợp các lớp không cần thiết, Inline Class(https://refactoring.guru/inline-class) hoặc Collapse Hierarchy(https://refactoring.guru/collapse-hierarchy) có thể được áp dụng nếu một lớp con hoặc lớp cha được sử dụng.
+	+ Để loại bỏ những tham số không cần thiết, sử dụng Remove Parameter(https://refactoring.guru/remove-parameter).
+* Cái mình nhận lại được
+- Làm code ngắn lại
+- Dễ hỗ trợ hơn
+* Khi nào thì nên bỏ qua việc này

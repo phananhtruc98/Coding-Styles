@@ -1,0 +1,17 @@
+Tập trung vào chuyên môn
+* Dấu hiệu nhận biết
+- Có những lớp, phương thức, trường và biến không sử dụng.
+* Lý do của những vấn đề này
+- Đôi khi tạo code 'phòng hờ' để hỗ trợ cho những tính năng dự đoán trong tương lai mà không giờ được thực thi. Và kết quả là code trở nên khó để hiểu và hỗ trợ.
+* Cách khắc phục
+- Bỏ các lớp trừu tượng không sử dụng, hãy thử dùng Collapse Hierarchy(https://refactoring.guru/collapse-hierarchy)
+- Sự ủy quyền không cần thiết của chức năng cho lớp khác có thể eliminated(xóa đi, refactor) thông qua Inline Class (https://refactoring.guru/inline-class)
+- Những phương thức không sử dụng? Dùng Inline Method(https://refactoring.guru/inline-method) để loại bỏ chúng
+- Phương thức với những tham số không sử dụng thì nên dùng Remove Parameter(https://refactoring.guru/remove-parameter)
+- Các trường không sử dụng có thể xóa đi.
+* Cái mình nhận lại được
+- Code ngắn hơn
+- Dễ support hơn
+* Khi nào thì nên bỏ qua việc này
+- Nếu bạn đang làm 1 framework, việc tạo ra chức năng không sử dụng trong chính framework của nó là hợp lý, miễn là người dùng framework đó cần chức năng đó.
+- Trước khi xóa những element, hãy đảm bảo rằng chúng không được sử dụng trong unit test. Ví dụ element đó được sử dụng trong unit test để lấy thông tin cần thiết từ một lớp hoặc thực hiện các chuỗi hành động liên quan nhau.
