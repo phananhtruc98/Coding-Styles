@@ -1,0 +1,18 @@
+Comments
+* Dấu hiệu nhận biết
+- Một phương thức chỉ toàn comment giải thích 
+* Lý do của những vấn đề trên
+- Comment thường được viết với ý định tốt nhất khi người viết thấy là code của họ không trực quan hoặc không rõ ràng. Trong nhiều trường hợp, comment giống như chiếc mặt nạ khử mùi của code mà có thể được cải thiện.
+|| Comment hay nhất là một cái tên cho phương thức hoặc lớp ||
+- Nếu bạn thấy rằng một mớ code không thể được hiểu nếu không có comment, hãy cố gắng thay đổi cấu trúc code để làm sao mà không cần đến comment.
+* Các xử lý
+- Nếu một comment có ý định để giải thích một expression phức tạp, thì expression đó nên được tách thành nhiều expression con dễ hiểu bằng cách sử dụng Extract Variable(https://refactoring.guru/extract-variable)
+- Nếu một comment giải thích một phần code, phần đó có thể trở thành một phương thức khác bằng Extract Variable(https://refactoring.guru/extract-variable), thì tên của phương thức có thể được lấy từ comment của nó, thường là vậy
+- Nếu một phương thức được trích xuất sẵn rồi, nhưng comment vẫn cần thiết để giải thích phương thức đó làm gì, thì hãy cho phương thức đó một cái tên mà tên đó giải thích được nó đang làm gì. Sử dụng Rename Method (https://refactoring.guru/rename-method)
+- Nếu bạn cần khẳng định quy tắc trạng thái mà nó cần thiết để hệ thống hoạt động, sử dụng Introduce Assertion(https://refactoring.guru/introduce-assertion)
+* Điều đạt được
+- Code trở nên trực quan và arõ ràng
+* Khi nào thì nên bỏ quan việc này
+- Comment đôi khi có ích khi:
+	+ Giải thích TẠI SAO điều gì đó phải được thực thi theo cách riêng này
+	+ Giải thích thuật toán phức tạp (khi những phương thức còn lại khi đã cố gắng làm đơn giản hóa tất cả các thuật toán khác và làm gọn hơn)
