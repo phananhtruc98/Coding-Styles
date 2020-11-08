@@ -1,5 +1,14 @@
+Thân thiết không thích hợp
 * Dấu hiệu nhận biết
+- Một lớp sử dụng những trường và phương thức nội bộ của một lớp khác.
 * Lý do của những vấn đề này
+- Dành nhiều thời gian cho việc theo dõi sự kết nối giữ các lớp. Các lớp thì nên biết càng ít về nhau thì càng tốt vì sẽ dễ bảo trì và tái sử dụng hơn.
 * Cách khắc phục
+- Cách đơn giản nhất là sử dụng Move Method(https://refactoring.guru/move-method) và Move Field(https://refactoring.guru/move-field) để di chuyển các phần của một lớp đến lớp mà những phần đó được sử dụng. Nhưng điều này chỉ hoạt động khi lớp đầu tiên không cần những phần này.
+- Một giải pháp khác là sử dụng Extract Class(https://refactoring.guru/extract-class) và Hide Delegate(https://refactoring.guru/hide-delegate) trong lớp để làm cho mối quan hệ code trở nên đúng hơn.
+- Nếu những lớp này phụ thuộc lẫn nhau, ban nên sử dụng Change Bidirectional Association to Unidirectional(Thay đổi mối quan hệ hai chiều thành một chiều)(https://refactoring.guru/change-bidirectional-association-to-unidirectional)
+- Nếu sự "thân thiết" này ở giữa lớp con và lớp cha, hay xem xét thay thế ủy quyền bằng kế thừa Replace Delegation with Inheritance(https://refactoring.guru/replace-delegation-with-inheritance)
 * Cái mình nhận lại được
+- Cải thiện cấu trúc code
+- Đơn giản hóa việc hỗ trợ và tái sử dụng code.
 * Khi nào thì nên bỏ qua việc này

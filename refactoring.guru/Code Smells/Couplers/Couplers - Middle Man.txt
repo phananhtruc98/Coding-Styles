@@ -1,5 +1,40 @@
+Middle Man (Trung gian)
 * Dấu hiệu nhận biết
+- Nếu một lớp chỉ thể hiện một hành động duy nhất, ủy quyền công việc của nó cho một lớp khác, tại sao nó lại tồn tại?
 * Lý do của những vấn đề này
+- Mùi này có thể là kết quả của việc sử dụng quá mức giới hạn của Message Chains.
+- Trong các trường hợp khác, nó có thể là kết quả của việc chuyển lớp hiện tại dần sang lớp khác, và lớp hiện tại là một lớp rỗng không làm gì ngoài việc ủy quyền cho các lớp khác.
 * Cách khắc phục
+- Nếu hầu hết các lớp của một phương thức đều ủy quyền cho một lớp khác, sử dụng Remove Middle Man
 * Cái mình nhận lại được
+- Code bớt cồng kềnh
 * Khi nào thì nên bỏ qua việc này
+Khi bạn tạo middle man vì những lý do dưới đây thì bạn không nên xóa nó:
+- Một middle man có thể được thêm để tránh interclass dependencies*
+- Một vài design pattern tạo middle man có mục đích (như là Proxy hoặc Decorator)
+
+*interclass dependencies có nghĩa là mình inject vòng tròn, xem ví dụ dưới đây sẽ hiểu:
+
+
+    class AreaCalculator
+    {
+        public static int Area(int length, int width)
+        {
+            return Shape.Width(length) * Shape.Length(width);
+        }
+    }
+    class Shape
+    {
+        public static int Length(int length)
+        {
+            return length;
+        }
+        public static int Width(int width)
+        {
+            return width;
+        }
+        public static int Area(int length, int width)
+        {
+            return AreaCalculator.Area(length, width);
+        }
+    }

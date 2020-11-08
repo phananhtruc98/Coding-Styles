@@ -1,5 +1,15 @@
+Tính năng ghen tỵ
 * Dấu hiệu nhận biết
+- Một phương thức truy cập dữ liệu của một đối tượng khác nhiều hơn dữ liệu của chính nó.
 * Lý do của những vấn đề này
+- Cái mùi này có thể xảy ra sau khi các trường được di chuyển vô lớp dữ liệu. Nếu trong trường hợp bạn muốn di chuyển thì di chuyển luôn cả phương thức của dữ liệu đó trong lớp đó luôn.
 * Cách khắc phục
+- Như quy luật đơn giản, nếu mọi thứ thay đổi ở cùng thời điểm, bạn giữ nó ở chung một nơi. Thông thường dữ liệu và chức năng sử dụng dữ liệu đó được thay đổi cùng nhau (mặc dù các trường hợp ngoại lệ có thể xảy ra)
+	+ Nếu một phương thức rõ ràng nên được di chuyển đến một nơi khác, sử dụng Move Method (https://refactoring.guru/move-method)
+	+ Nếu chỉ một phần của một phương thức truy cập dữ liệu của một đối tượng khác, sử dụng Extract Method (https://refactoring.guru/extract-method) để di chuyển phần đang được đề cập đến.
+	+ Nếu một phương thức sử dụng chức năng từ một số lớp khác, đầu tiên xác định lớp nào chứa nhiều dữ liệu được sử dụng nhất. Sau đó đặt phương thức trong lớp đó với dữ liệu khác. Còn một cách khác, sử dụng Extract Method(https://refactoring.guru/extract-method) để tách phương thức thành nhiều phần mà có thể đặt ở nhiều chỗ ở nhiều lớp khác nhau.
 * Cái mình nhận lại được
+- Code ít bị trùng (nếu dữ liệu xử lý code đặt ở trung tâm)
+- Cấu trúc code tốt hơn(phương thức để xử lý dữ liệu được bên cạnh dữ liệu thực)
 * Khi nào thì nên bỏ qua việc này
+- Đôi khi hành vi nên được giữ riêng biệt với lớp dữ liệu. Ưu điểm thường là khả năng thay đổi hành vi một cách linh hoạt ( xem Strategy(https://refactoring.guru/design-patterns/strategy), Visitor(https://refactoring.guru/design-patterns/visitor) và những pattern khác)

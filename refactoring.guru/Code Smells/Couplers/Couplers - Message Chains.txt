@@ -1,5 +1,13 @@
+Message chains
 * Dấu hiệu nhận biết
+- Khi bạn thấy trong code có một loạt các lệnh gọi tương tự như này $a->b()->c()->d()
 * Lý do của những vấn đề này
+- Message chains xảy ra khi một lớp client yêu cầu một đối tượng khác, mà đối tượng đó yêu cầu một đối tượng khác, và tiếp tục như vậy. Các chuỗi này có nghĩa là lớp client phụ thuộc vào điều hướng theo cấu trúc lớp. Bất kỳ thay đổi nào trong các mối quan hệ này đều phải chỉnh sửa lớp client này
 * Cách khắc phục
+- Để xóa một message chain, sử dụng Hide Delegate (https://refactoring.guru/hide-delegate)
+- Đôi khi, nghĩ về lý do tại sao một đối tượng cuối cùng được sử dụng. Có thể nó sẽ hợp lý nếu sử dụng Extract Method(https://refactoring.guru/extract-method) cho chức năng và di chuyển đến đầu của chuỗi message, bằng cách sử dụng Move Method(https://refactoring.guru/move-method).
 * Cái mình nhận lại được
+- Giảm sự phụ thuộc giữa các lớp của một chuỗi.
+- Code bớt cồng kềnh
 * Khi nào thì nên bỏ qua việc này
+- Việc ẩn các lớp ủy quyền quá mức sẽ khó để thấy chức năng thực sự xảy ra ở đâu. Nói cách khác, tránh luôn cả mùi Middle Man(https://refactoring.guru/smells/middle-man)

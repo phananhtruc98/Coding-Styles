@@ -1,0 +1,16 @@
+Other Smells: 
+Dưới đây là những smell mà không thuộc vào các loại smell nào ở trên:
+
+=====================================
+Incomplete library class: Lớp thư viện chưa hoàn thành
+Dấu hiệu nhận biết: 
+- Sớm muộn gì, những thư viện cũng sẽ không đáp ứng được nhu cầu của người dùng. Cách giải quyết duy nhất cho vấn đề này - thay đổi thư viện - thường là không thể kể từ khi thư viện chỉ có thể đọc.
+Lý do cho những vấn đề này
+- Tác giả của thư viện không cung cấp tính năng mà bạn cần hoặc là họ từ chối thực thi chúng.
+Cách xử lý
+- Giới thiệu một số phương thức đến một lớp thư việc, sử dụng Introduce Foreign Method
+- Để có sự thay đổi lớn trong lớp thư viện, sử dụng Introduce Local Extension.
+Đạt được những gì
+- Code bớt bị lặp lại ( thay vì tạo từ thư viện của chính bạn, bạn có thể vẫn sử dụng cái hiện có)
+Khi nào thì nên bỏ qua việc này
+- Mở rộng một thư viện có thể sẽ tạo thêm công việc nếu những thay đổi đến thư viện đó làm thay đổi trong code.
