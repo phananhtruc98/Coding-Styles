@@ -5,7 +5,7 @@ Lớp lười
 - Có thể là do một lớp được thiết kế với đầy đủ chức năng nhưng sau đó một vài lần refactor nó trở nên nhỏ một cách kỳ cục.
 - Hoặc là do nó được thiết kế để phục vụ cho những chức năng trong tương lai mà không bao giờ hoàn thành được.
 * Cách khắc phục
-- Những thành mà nó gần như là vô dụng nên được xử lý như Inline Class(https://refactoring.guru/inline-class).
+- Những thành phần mà nó gần như là vô dụng nên được xử lý như Inline Class(https://refactoring.guru/inline-class).
 - Đối với những lớp con với những chức năng mới, thử sử dụng Collapse Hierarchy(https://refactoring.guru/collapse-hierarchy)
 * Cái mình nhận lại được
 - Làm code ngắn lại.

@@ -1,5 +1,11 @@
+Code chết
 * Dấu hiệu nhận biết
+- Một biến, tham số, trường, phương thức hoặc lớp không còn được sử dụng(thường thì là do nó cũ) 
 * Lý do của những vấn đề này
+- Khi những yêu cầu phần mềm thay đổi hoặc chỉnh sửa, không có ai có thời gian để dọn dẹp lại code cũ.
+- Code như vậy có thể tìm thấy trong điều kiện phức tạp, khi một trong các nhánh trở nên không thể truy cập được (do lỗi hoặc các tường hợp khác)
 * Cách khắc phục
+- Cách nhanh nhất để tìm ra code chết là sử dụng IDE tốt
+	+ Xóa những code không sử dụng hoặc cái file không cần thiết
 * Cái mình nhận lại được
 * Khi nào thì nên bỏ qua việc này
